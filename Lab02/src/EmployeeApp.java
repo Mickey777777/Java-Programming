@@ -49,7 +49,7 @@ public class EmployeeApp {
 			}else if(menu == 3) {
 				displayAllInformation(employee);
 			}else if(menu == 0) {
-				System.out.println("Bye");
+				System.out.println("Bye!");
 				break;
 			}else {
 				System.out.println("Wrong number. Type again!");
