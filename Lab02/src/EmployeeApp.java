@@ -74,7 +74,7 @@ public class EmployeeApp {
 		System.out.printf("%-20s %-20s\n", "Name", "Position");
 		System.out.println("----------------------------------------");
 		for(int i=0; i<MAX_NUM; i++) {
-			employee[i].printPosition();
+			System.out.printf("%-20s: %-19s\n", employee[i].getName(), employee[i].getPosition());
 		}
 	}
 	
@@ -83,7 +83,7 @@ public class EmployeeApp {
 		System.out.printf("%-20s %-20s\n", "Name", "Salary");
 		System.out.println("----------------------------------------");
 		for(int i=0; i<MAX_NUM; i++) {
-			employee[i].printSalary();
+			System.out.printf("%-20s: %,d\n", employee[i].getName(), employee[i].getSalary());
 		}
 	}
 	

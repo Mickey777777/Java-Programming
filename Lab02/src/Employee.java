@@ -44,14 +44,6 @@ public class Employee {
 		return this.position;
 	}
 	
-	public void printPosition() {
-		System.out.printf("%-20s: %-19s\n", this.fullName, this.position);
-	}
-	
-	public void printSalary() {
-		System.out.printf("%-20s: %,d\n", this.fullName, this.salary);
-	}
-	
 	public void printEmployee() {
 		System.out.printf("%-23s%2d%23s    %,d\n", this.fullName, this.age, this.position, this.salary);
 	}
