@@ -6,7 +6,7 @@ public class AirlineReservationApp {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Airline airline = new Airline(4, 10);
+		Airline airline = new Airline("AAA", 4, 10);
 		
 		airline.displaySeats();
 		

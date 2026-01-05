@@ -2,11 +2,13 @@
 
 
 public class Airline {
+	String airline;
 	int row;
 	int col;
 	int[][] seat;
 	
-	public Airline(int row, int col) {
+	public Airline(String airline, int row, int col) {
+		this.airline = airline;
 		this.row = row;
 		this.col = col;
 		makeSeat();
@@ -35,11 +37,11 @@ public class Airline {
 		
 		if(len == 2) {
 			iRow = 'A' - seatName.charAt(1) + row - 1;
-			iCol = seatName.charAt(0) - '0' - 1;
+			iCol = Integer.parseInt(seatName.substring(0, len-1)) - 1;
 			System.out.printf("rowChar: %s, colString: %s\n", seatName.charAt(1), seatName.charAt(0));
 		}else if(len == 3) {
 			iRow = 'A' - seatName.charAt(2) + row - 1;
-			iCol = ((seatName.charAt(0) - '0') * 10) + seatName.charAt(1) - '0' - 1;
+			iCol = Integer.parseInt(seatName.substring(0, len-1)) - 1;
 			System.out.printf("rowChar: %s, colString: %s\n", seatName.charAt(2), seatName.substring(0, 2));
 		}
 		
@@ -65,7 +67,7 @@ public class Airline {
 	
 	public void displaySeats() {
 		System.out.println("+-----------------------------------------------------------+");
-		System.out.println(" AAA 항공사 예약 현황");
+		System.out.printf(" %s 항공사 예약 현황\n", airline);
 		System.out.println("+-----------------------------------------------------------+");
 		
 		for(int i=0; i<row; i++) {
