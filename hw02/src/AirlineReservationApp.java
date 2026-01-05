@@ -16,28 +16,32 @@ public class AirlineReservationApp {
 			try {
 				printMenu();
 				cmd = sc.nextInt();
+				
+				if(cmd == 1) {
+					swissAirline.menu();
+				}else if(cmd == 2) {
+					taiwanAirline.menu();
+				}else if(cmd == 3) {
+					seoulAirline.menu();
+				}else if(cmd == 4) {
+					System.out.println("-------------------------------------------------------");
+					System.out.println("전체 예약 현황");
+					System.out.printf("Swiss Airline 예약 현황: %2d/ %2d\n", swissAirline.curSeat, swissAirline.maxSeat);
+					System.out.printf("Taiwan Airline 예약 현황: %2d/ %2d\n", taiwanAirline.curSeat, taiwanAirline.maxSeat);
+					System.out.printf("Seoul Airline 예약 현황: %2d/ %2d\n", seoulAirline.curSeat, seoulAirline.maxSeat);
+				}else if(cmd == 0) {
+					break;
+				}else {
+					System.out.println("잘못된 메뉴 선택입니다. 다시 입력해주세요 (0~4)");
+				}
+				
+				
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 메뉴 선택입니다. 숫자를 다시 입력해주세요 (0~4)");
 				sc.nextLine();
 			}
 			
-			if(cmd == 1) {
-				swissAirline.menu();
-			}else if(cmd == 2) {
-				taiwanAirline.menu();
-			}else if(cmd == 3) {
-				seoulAirline.menu();
-			}else if(cmd == 4) {
-				System.out.println("-------------------------------------------------------");
-				System.out.println("전체 예약 현황");
-				System.out.printf("Swiss Airline 예약 현황: %2d/ %2d\n", swissAirline.curSeat, swissAirline.maxSeat);
-				System.out.printf("Taiwan Airline 예약 현황: %2d/ %2d\n", taiwanAirline.curSeat, taiwanAirline.maxSeat);
-				System.out.printf("Seoul Airline 예약 현황: %2d/ %2d\n", seoulAirline.curSeat, seoulAirline.maxSeat);
-			}else if(cmd == 0) {
-				break;
-			}else {
-				System.out.println("잘못된 메뉴 선택입니다. 다시 입력해주세요 (0~4)");
-			}
+			
 			
 		}
 		
