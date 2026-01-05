@@ -36,7 +36,7 @@ public class UpcastingEx02 {
 		Animal person = new Human();
 		person.name = "person1";
 		
-		Animal animals[] = {animal, fish, person};
+		Animal[] animals = {animal, fish, person};
 		printObject(animals);
 	}
 	
