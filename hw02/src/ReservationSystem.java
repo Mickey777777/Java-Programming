@@ -43,7 +43,6 @@ public class ReservationSystem implements ReservationInterface{
 					String seatName = sc.next();
 					
 					if(reserveSeat(seatName) == 0) {
-						System.out.printf("[예약 성공] %s\n", seatName);
 						displaySeat(systemTitle);
 					}
 					
@@ -52,7 +51,6 @@ public class ReservationSystem implements ReservationInterface{
 					String seatName = sc.next();
 					
 					if(cancelSeat(seatName) == 0) {
-						System.out.printf("[예약 취소 성공] %s\n", seatName);
 						displaySeat(systemTitle);
 					}
 				}else if(cmd == 3) {
@@ -98,6 +96,7 @@ public class ReservationSystem implements ReservationInterface{
 			return -1;
 		}
 		
+		System.out.printf("[예약 성공] %s\n", seatName);
 		
 		seats[seatArray[0]][seatArray[1]] = 1;
 		curSeat++;
@@ -122,7 +121,7 @@ public class ReservationSystem implements ReservationInterface{
 		seats[seatArray[0]][seatArray[1]] = 0;
 		curSeat--;
 		
-		
+		System.out.printf("[예약 취소 성공] %s\n", seatName);
 		return 0;
 	}
 
@@ -182,7 +181,7 @@ public class ReservationSystem implements ReservationInterface{
 		System.out.printf("[%s 예약 시스템 예약 현황] 예약 좌석: %d/ 총 좌석: %d\n", systemTitle, curSeat, maxSeat);
 		System.out.println();
 		
-		for(int i=0; i<2; i++) {
+		for(int i=0; i<row; i++) {
 			for(int j=0; j<col; j++) {
 				System.out.printf("[%2d%c] ", j+1, row-i+'A'-1);
 			}

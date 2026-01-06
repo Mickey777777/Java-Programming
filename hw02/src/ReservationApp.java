@@ -43,7 +43,6 @@ public class ReservationApp {
 	private static void printMenu() {
 		System.out.println("----------------------------------------------");
 		System.out.println("  K-Startup의 통합 예약 시스템을 방문해 주셔서 감사합니다.");
-		System.out.println("----------------------------------------------");
 		System.out.printf("%6s %s\n", "1.", "항공사 예약 시스템");
 		System.out.printf("%6s %s\n", "2.", "버스 예약 시스템");
 		System.out.printf("%6s %s\n", "0.", "통합 예약 시스템 종료");
