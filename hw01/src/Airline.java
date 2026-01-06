@@ -14,6 +14,7 @@ public class Airline {
 		makeSeat();
 	}
 	
+	
 	public void makeSeat() {
 		seat = new int[row][col];
 		for(int i=0; i<row; i++) {
