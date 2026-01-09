@@ -48,18 +48,25 @@ public class FindingJokerApp {
 			human.checkSameCard();
 			human.printCard();
 			System.out.println("---------------------------------------------------------------------------------");
+			
+			if(computer.holdingCardList.size() <= 1 || human.holdingCardList.size() <= 1) {
+				break;
+			}
+			
 			System.out.println("상대방의 카드 한 장 선택");
-			computer.chooseCard(human);
-			human.chooseCard(computer);
+			
+			List<Card> humanCards = new ArrayList<>(human.holdingCardList);
+			List<Card> computerCards = new ArrayList<>(computer.holdingCardList);
+			
+			computer.chooseCard(human, humanCards);
+			human.chooseCard(computer, computerCards);
 			System.out.println("---------------------------------------------------------------------------------");
 			computer.printCard();
 			System.out.println("---------------------------------------------------------------------------------");
 			human.printCard();
 			System.out.println("---------------------------------------------------------------------------------");
 			
-			if(computer.holdingCardList.size() == 1 || human.holdingCardList.size() == 1) {
-				break;
-			}
+			
 			
 			System.out.println("다음 단계 게임 진행을 위해 Enter 키를 누르세요!");
 			sc.nextLine();

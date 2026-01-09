@@ -21,7 +21,8 @@ public class Player {
 			if((i+1)%10==0 || i==openCardList.size()-1) System.out.println();
 		}
 		
-		System.out.println();
+		if(openCardList.size() == 0) System.out.println();
+		
 		System.out.printf("Holding card list: %d\n", this.holdingCardList.size());
 		for(int i=0; i<holdingCardList.size(); i++) {
 			System.out.printf("[%2d]%s", i, this.holdingCardList.get(i));
@@ -56,11 +57,11 @@ public class Player {
 		}				
 	}
 	
-	public void chooseCard(Player p) {
-		int pHoldingCardSize = p.holdingCardList.size();
-		int randomIdx = (int)(Math.random() * pHoldingCardSize);
+	public void chooseCard(Player p, List<Card> availableCard) {
+		int availableCardSize = availableCard.size();
+		int randomIdx = (int)(Math.random() * availableCardSize);
 		
-		Card choose = p.holdingCardList.get(randomIdx);
+		Card choose = availableCard.get(randomIdx);
 		
 		this.holdingCardList.add(choose);
 		p.holdingCardList.remove(choose);
