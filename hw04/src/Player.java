@@ -33,17 +33,16 @@ public class Player extends Thread{
 			int randomRow = (int)(Math.random() * ROW);
 			int randomCol = (int)(Math.random() * COL);
 			
-			int result = gameBoard.selectCell(randomRow, randomCol);
-			
+			int result = gameBoard.selectCell(randomRow, randomCol, this.lifetime);
+
 			if(result == 0) {
 				this.lifetime--;
-				System.out.printf("%s lifetime: %d\n", this.getName(), this.lifetime);
 			}else if(result == 2) {
 				this.selectedCount++;
 			}
 			
-			this.gameBoard.printBoard();
-			System.out.println();
+			//this.gameBoard.printBoard();
+			//System.out.println();
 		}
 		
 		System.out.printf("%s thread finished! (lifetime: %d)\n", this.getName(), this.lifetime);

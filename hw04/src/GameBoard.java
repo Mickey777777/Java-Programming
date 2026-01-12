@@ -56,30 +56,37 @@ public class GameBoard {
 		}
 	}
 	
-	synchronized public int selectCell(int randomRow, int randomCol) {
-		
+	synchronized public int selectCell(int randomRow, int randomCol, int lifetime) {
+
 		// 0 - 지뢰
 		// 1 - 이미 선택
 		// 2 - 성공
-		
+
+		int flag = -1;
+
 		String threadName = Thread.currentThread().getName();
-		
+
 		System.out.printf("%s: [%d][%d] select=> ", threadName, randomRow, randomCol);
-		
+
 		String cell = this.board[randomRow][randomCol];
 		if(cell.equals("B")) {
 			System.out.println("Mine found");
-			String bombName = String.format("B%c", threadName.charAt(threadName.length()-1)); 
+			String bombName = String.format("B%c", threadName.charAt(threadName.length()-1));
 			board[randomRow][randomCol] = bombName;
-			return 0;
+			flag = 0;
+			System.out.printf("%s lifetime: %d\n", threadName, lifetime - 1);
 		}else if(cell.equals(" ")) {
 			System.out.println("SUCCESS");
 			this.board[randomRow][randomCol] = threadName;
-			return 2;
+			flag = 2;
 		}else {
 			System.out.println("Another thread already chose.");
-			return 1;
+			flag = 1;
 		}
+
+		this.printBoard();
+		System.out.println();
+		return flag;
 	}
 	
 	
