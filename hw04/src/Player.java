@@ -1,6 +1,8 @@
 // 2025005847 박우현
 
 public class Player extends Thread{
+	private static final int ROW = 5;
+	private static final int COL = 5;
 	private GameBoard gameBoard;
 	private int lifetime;
 	private int selectedCount;
@@ -28,7 +30,10 @@ public class Player extends Thread{
 				break;
 			}
 			
-			int result = gameBoard.selectCell();
+			int randomRow = (int)(Math.random() * ROW);
+			int randomCol = (int)(Math.random() * COL);
+			
+			int result = gameBoard.selectCell(randomRow, randomCol);
 			
 			if(result == 0) {
 				this.lifetime--;

@@ -35,7 +35,7 @@ public class GameBoard {
 		
 		for(int i=0; i<ROW; i++) {
 			for(int j=0; j<COL; j++) {
-				if(this.board[i][j].equals(" ")) ret++;
+				if(this.board[i][j].equals(" ") || this.board[i][j].equals("B")) ret++;
 			}
 		}
 		
@@ -56,14 +56,12 @@ public class GameBoard {
 		}
 	}
 	
-	synchronized public int selectCell() {
+	synchronized public int selectCell(int randomRow, int randomCol) {
 		
 		// 0 - 지뢰
 		// 1 - 이미 선택
 		// 2 - 성공
 		
-		int randomRow = (int)(Math.random() * ROW);
-		int randomCol = (int)(Math.random() * COL);
 		String threadName = Thread.currentThread().getName();
 		
 		System.out.printf("%s: [%d][%d] select=> ", threadName, randomRow, randomCol);
