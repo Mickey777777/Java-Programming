@@ -68,6 +68,6 @@ public class Player {
 
 		System.out.printf("%-8s: %-12s[%2d]%s 가져옴 \n", this.name, p.name+" 의", randomIdx, choose);
 		
-		//checkSameCard();
+		checkSameCard();
 	}
 }
