@@ -31,6 +31,7 @@ public class MineSweeperApp {
 			p3.join();
 		}catch(InterruptedException e) {}
 		
+		System.out.println();
 		System.out.println("[Game Result]");
 		System.out.println("=======================");
 		System.out.printf("%s selected: %d, remained lifetime: %d\n", p1.getName(), p1.getSelectedCount(), p1.getLifetime());

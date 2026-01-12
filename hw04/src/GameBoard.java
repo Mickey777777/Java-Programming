@@ -30,7 +30,7 @@ public class GameBoard {
 		}
 	}
 	
-	public int getEmptyCellCount() {
+	synchronized public int getEmptyCellCount() {
 		int ret = 0;
 		
 		for(int i=0; i<ROW; i++) {
