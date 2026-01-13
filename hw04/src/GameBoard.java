@@ -83,6 +83,7 @@ public class GameBoard {
 			System.out.println("Another thread already chose.");
 			flag = 1;
 		}
+	
 
 		this.printBoard();
 		System.out.println();
